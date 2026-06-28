@@ -24,20 +24,41 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Unbounded', sans-serif;
             font-weight: 800;
             line-height: 1.2;
             text-align: left;
         }
-        h1 { font-size: 2.75rem; }
-        h2 { font-size: 2.25rem; margin-bottom: 1rem; }
-        h3 { font-size: 1.75rem; }
-        h4 { font-size: 1.25rem; }
-        p { font-size: 1rem; color: #444; }
-        .text-white { color: #fff; }
-        .text-dark { color: #1a1a1a; }
-        .accent { color: #ffdd2d; }
+        h1 {
+            font-size: 2.75rem;
+        }
+        h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.75rem;
+        }
+        h4 {
+            font-size: 1.25rem;
+        }
+        p {
+            font-size: 1rem;
+            color: #444;
+        }
+        .text-white {
+            color: #fff;
+        }
+        .text-dark {
+            color: #1a1a1a;
+        }
+        .accent {
+            color: #ffdd2d;
+        }
 
         .section {
             padding: 80px 0;
@@ -46,7 +67,9 @@
             background: #222;
             color: #fff;
         }
-        .section-dark p { color: #ddd; }
+        .section-dark p {
+            color: #ddd;
+        }
         .section-white {
             background: #fff;
         }
@@ -84,6 +107,10 @@
         }
         .btn-white:hover {
             background: #f0f0f0;
+        }
+        .btn-center {
+            text-align: center;
+            margin-top: 30px;
         }
 
         .header {
@@ -147,7 +174,7 @@
         .hero-image img {
             width: 100%;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .grid-3 {
@@ -172,7 +199,7 @@
             background: #fff;
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s;
         }
         .card:hover {
@@ -239,6 +266,12 @@
         }
         .slider-btn:hover {
             background: #ddd;
+        }
+
+        /* Единая высота для картинок в слайдере кейсов */
+        .slider-slide .card img {
+            height: 250px;
+            object-fit: cover;
         }
 
         .tariffs {
@@ -317,7 +350,7 @@
             margin-top: 40px;
         }
         .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 16px 0;
         }
         .faq-question {
@@ -352,6 +385,7 @@
             padding: 12px 0 12px 20px;
         }
 
+        /* Общие стили для форм */
         .form-section {
             background: #fff;
             padding: 60px 0;
@@ -360,7 +394,7 @@
             background: #fff;
             border-radius: 24px;
             padding: 40px 50px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             max-width: 720px;
             margin: 0 auto;
             border: 1px solid #eee;
@@ -489,13 +523,12 @@
             width: 100%;
             margin: 0 auto;
             display: block;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
         .author-block {
             text-align: left;
         }
 
-        /* вспомогательные классы для убирания inline font-family */
         .badge {
             color: #ffdd2d;
             font-weight: 700;
@@ -513,6 +546,81 @@
             font-family: 'Unbounded', sans-serif;
         }
 
+        /* сообщение об успехе */
+        .thanks-message {
+            color: #28a745;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 20px 0;
+            display: none;
+        }
+
+        /* разделительный блок (новый) */
+        .divider-block {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .divider-block h2 {
+            color: #ffdd2d;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .divider-block p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #ddd;
+            font-weight: 400;
+        }
+
+        /* Модальное окно для видео */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal-content {
+            position: relative;
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .video-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 32px;
+            font-weight: 300;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+        .video-modal-close:hover {
+            color: #000;
+        }
+        .video-modal-content video {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
         @media (max-width: 992px) {
             .hero .container {
                 grid-template-columns: 1fr;
@@ -521,7 +629,8 @@
             .hero-buttons .btn {
                 margin: 8px;
             }
-            .grid-3, .grid-4 {
+            .grid-3,
+            .grid-4 {
                 grid-template-columns: 1fr 1fr;
             }
             .grid-2 {
@@ -536,6 +645,9 @@
             }
             .author-photo {
                 max-width: 220px;
+            }
+            .divider-block p {
+                font-size: 1.1rem;
             }
         }
         @media (max-width: 768px) {
@@ -553,13 +665,21 @@
             .form-grid {
                 grid-template-columns: 1fr;
             }
+            .divider-block p {
+                font-size: 1rem;
+            }
         }
         @media (max-width: 640px) {
-            .grid-3, .grid-4 {
+            .grid-3,
+            .grid-4 {
                 grid-template-columns: 1fr;
             }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
             .header .container {
                 flex-wrap: wrap;
             }
@@ -578,6 +698,12 @@
             .section {
                 padding: 50px 0;
             }
+            .divider-block p {
+                font-size: 0.95rem;
+            }
+            .slider-slide .card img {
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -585,11 +711,12 @@
 
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">amo.<span>biz</span></a>
+            <a href="#" class="logo">morin<span>biz</span></a>
             <nav class="nav">
                 <a href="#about">О интенсиве</a>
                 <a href="#program">Программа</a>
                 <a href="#tariffs">Тарифы</a>
+                <a href="#order">Заказать</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Контакты</a>
             </nav>
@@ -604,11 +731,10 @@
                 <p>Научитесь за 10 дней переносить проекты из 3cad в базовый софт, создавать живые интерьеры и закрывать сделки через вау-эффект — без покупки дорогих компьютеров и раздувания штата.</p>
                 <div class="hero-buttons">
                     <a href="#tariffs" class="btn btn-primary">Занять место</a>
-                    <a href="#" class="btn btn-secondary">Как увеличить чек?</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/8e7002fb-840d-479b-98e4-bf7c864de2db.png" alt="VR-презентация кухни">
+                <img src="img/lico.jpg" alt="VR-презентация кухни">
             </div>
         </div>
     </section>
@@ -697,6 +823,9 @@
                     <p>Получаем фотореалистичную сферическую панораму всего за 20 минут.</p>
                 </div>
             </div>
+            <div class="btn-center">
+                <a href="#tariffs" class="btn btn-primary">Начать обучение →</a>
+            </div>
         </div>
     </section>
 
@@ -707,7 +836,10 @@
                 <div class="slider-track" id="sliderTrack1">
                     <div class="slider-slide">
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;">
-                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/75243950-b449-4a56-ab61-380ecbfcfe8a.png" alt="Формат 1" style="border-radius:12px; width:100%;">
+                            <div style="cursor:pointer;" onclick="openVideoModal()">
+                                <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/75243950-b449-4a56-ab61-380ecbfcfe8a.png" alt="Формат 1" style="border-radius:12px; width:100%;">
+                                <p style="text-align:center; margin-top:8px; font-size:0.9rem; color:#555; font-weight:500;">Нажми для просмотра видео-обзора</p>
+                            </div>
                             <div>
                                 <span class="slide-label">01 / 03</span>
                                 <h3>Формат 1: Видео-обзор</h3>
@@ -740,6 +872,19 @@
                     <button class="slider-btn" onclick="slidePrev('slider1')">◀ Назад</button>
                     <button class="slider-btn" onclick="slideNext('slider1')">Вперёд ▶</button>
                 </div>
+            </div>
+            <div class="btn-center">
+                <a href="#tariffs" class="btn btn-primary">Получить все форматы →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВЫЙ РАЗДЕЛИТЕЛЬ: без кавычек, с заголовком -->
+    <section class="section section-dark" style="padding: 60px 0;">
+        <div class="container">
+            <div class="divider-block">
+                <h2>Звучит эффектно, но работает ли это в реальных условиях?</h2>
+                <p>Да, и еще как. Презентация в интерактивных форматах полностью меняет отношение клиента к цене, убирает страхи и вовлекает в покупку. Вот несколько примеров роста чека из практики.</p>
             </div>
         </div>
     </section>
@@ -788,6 +933,9 @@
                     <button class="slider-btn" onclick="slideNext('slider2')">Вперёд ▶</button>
                 </div>
             </div>
+            <div class="btn-center">
+                <a href="#tariffs" class="btn btn-primary">Применить в своём бизнесе →</a>
+            </div>
         </div>
     </section>
 
@@ -831,6 +979,9 @@
                     </div>
                 </div>
             </div>
+            <div class="btn-center">
+                <a href="#tariffs" class="btn btn-primary">Выбрать тариф →</a>
+            </div>
         </div>
     </section>
 
@@ -850,7 +1001,7 @@
                         <li style="opacity:0.5;">Модуль 5 — нет</li>
                         <li style="opacity:0.5;">Наставничество — нет</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary" style="border-color:#ddd;">Оформить</a>
+                    <a href="#order" class="btn btn-secondary" style="border-color:#ddd;">Оформить</a>
                 </div>
                 <div class="tariff-card popular">
                     <h3>«Студия»</h3>
@@ -863,7 +1014,7 @@
                         <li>Модуль 5</li>
                         <li>Возможность добавлять сотрудников</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Оформить</a>
+                    <a href="#order" class="btn btn-primary">Оформить</a>
                 </div>
                 <div class="tariff-card">
                     <h3>«Студия» + Наставничество</h3>
@@ -876,8 +1027,52 @@
                         <li>Проверка заданий</li>
                         <li>Личное сопровождение автора</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary" style="border-color:#ddd;">Оформить</a>
+                    <a href="#order" class="btn btn-secondary" style="border-color:#ddd;">Оформить</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВАЯ СЕКЦИЯ: ФОРМА ЗАКАЗА -->
+    <section class="section section-white" id="order">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2>Оформите заказ на интенсив</h2>
+                <p class="subtitle">Заполните поля, и мы свяжемся с вами для выбора тарифа и выставления счета.</p>
+
+                <form id="orderForm" class="form-grid">
+                    <div class="field">
+                        <i>👤</i>
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="field">
+                        <i>📞</i>
+                        <input type="tel" name="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="field">
+                        <i>🌆</i>
+                        <input type="text" name="city" placeholder="Город" required>
+                    </div>
+                    <div class="field">
+                        <i>👥</i>
+                        <input type="number" name="employees" placeholder="Количество сотрудников" required>
+                    </div>
+                    <div class="field field-full">
+                        <i>💬</i>
+                        <input type="text" name="comment" placeholder="Комментарий к заказу (необязательно)" style="padding-left:44px;">
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-gradient">Оформить</button>
+                        <div class="form-footer">
+                            <label>
+                                <input type="checkbox" checked disabled>
+                                Нажимая на кнопку, вы соглашаетесь с условиями обработки персональных данных
+                            </label>
+                        </div>
+                        <div id="thanksMessage" class="thanks-message">✅ Спасибо! Ваш заказ успешно оформлен.</div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -950,6 +1145,9 @@
                     </div>
                 </div>
             </div>
+            <div class="btn-center">
+                <a href="#tariffs" class="btn btn-primary">Оформить интенсив →</a>
+            </div>
         </div>
     </section>
 
@@ -1016,7 +1214,16 @@
         </div>
     </footer>
 
+    <!-- Модальное окно для видео -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+            <video src="img/For%20Elena.mp4" controls></video>
+        </div>
+    </div>
+
     <script>
+        // FAQ
         function toggleFaq(el) {
             const answer = el.nextElementSibling;
             const icon = el.querySelector('.icon');
@@ -1031,6 +1238,7 @@
             }
         }
 
+        // Слайдеры
         const sliders = {};
 
         function initSlider(id) {
@@ -1046,7 +1254,7 @@
             const s = sliders[id];
             if (!s) return;
             const width = s.slides[0].offsetWidth;
-            s.track.style.transform = `translateX(-${s.current * width}px)`;
+            s.track.style.transform = 'translateX(-' + (s.current * width) + 'px)';
         }
 
         function slideNext(id) {
@@ -1066,11 +1274,11 @@
         window.addEventListener('load', function() {
             initSlider('slider1');
             initSlider('slider2');
-            let resizeTimeout;
+            var resizeTimeout;
             window.addEventListener('resize', function() {
                 clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    for (let id in sliders) {
+                resizeTimeout = setTimeout(function() {
+                    for (var id in sliders) {
                         updateSlider(id);
                     }
                 }, 200);
@@ -1080,6 +1288,64 @@
         window.slideNext = slideNext;
         window.slidePrev = slidePrev;
         window.toggleFaq = toggleFaq;
+
+        // Модальное окно видео
+        function openVideoModal() {
+            document.getElementById('videoModal').classList.add('active');
+            const video = document.querySelector('#videoModal video');
+            if (video) {
+                video.play();
+            }
+        }
+
+        function closeVideoModal() {
+            document.getElementById('videoModal').classList.remove('active');
+            const video = document.querySelector('#videoModal video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
+
+        // Закрытие по клику на фон
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) closeVideoModal();
+        });
+
+        // ===== ОТПРАВКА ФОРМЫ ЗАКАЗА =====
+        // ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА РЕАЛЬНЫЙ URL ВАШЕГО GOOGLE APPS SCRIPT
+        var scriptURL = 'https://script.google.com/macros/s/XXXXX_ВАШ_ID_XXXXX/exec';
+        var orderForm = document.getElementById('orderForm');
+        var thanksMessage = document.getElementById('thanksMessage');
+
+        if (orderForm) {
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var submitButton = orderForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.innerText = 'Отправка...';
+
+                var formData = new FormData(orderForm);
+
+                fetch(scriptURL, { method: 'POST', body: formData })
+                    .then(function(response) {
+                        submitButton.disabled = false;
+                        submitButton.innerText = 'Оформить';
+                        orderForm.reset();
+                        thanksMessage.style.display = 'block';
+                        setTimeout(function() {
+                            thanksMessage.style.display = 'none';
+                        }, 6000);
+                    })
+                    .catch(function(error) {
+                        console.error('Ошибка!', error.message);
+                        submitButton.disabled = false;
+                        submitButton.innerText = 'Оформить';
+                        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+                    });
+            });
+        }
     </script>
 
 </body>
