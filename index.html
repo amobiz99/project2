@@ -59,6 +59,14 @@
         .format-card h3{font-size:1.3rem;margin-bottom:8px}
         .format-card p{font-size:.95rem;color:#555;flex-grow:1}
         .format-card .link-more{display:inline-block;margin-top:12px;color:#ffdd2d;font-weight:700}
+        /* стили для карточек кейсов */
+        .case-card{background:#fff;border-radius:16px;padding:20px 15px;box-shadow:0 4px 12px rgba(0,0,0,.05);cursor:pointer;transition:transform .2s,box-shadow .2s;text-align:center;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+        .case-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+        .case-card .image-wrap{height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;width:100%}
+        .case-card .image-wrap img{height:100%;object-fit:contain;width:100%}
+        .case-card h3{font-size:1.3rem;margin-bottom:6px}
+        .case-card p{font-size:.9rem;color:#777;flex-grow:1}
+        .case-card .link-more{display:inline-block;margin-top:10px;color:#ffdd2d;font-weight:700}
         .tariffs{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:40px}
         .tariff-card{background:#fff;border-radius:16px;padding:24px 20px;border:2px solid #e6e6e6;text-align:center;transition:border-color .3s;flex:1 1 260px;max-width:320px;display:flex;flex-direction:column}
         .tariff-card.popular{border-color:#ffdd2d;position:relative}
@@ -126,10 +134,9 @@
         .author-compact p{line-height:1.5;font-size:.95rem}
         .author-compact h3{text-align:center;margin:12px 0 8px;color:#ffdd2d}
         .text-center{text-align:center}
-        .case-card-clickable{cursor:pointer}
         @media (max-width:992px){.hero .container{grid-template-columns:1fr;text-align:center}.hero-buttons .btn{margin:8px}.grid-3,.grid-4{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr;text-align:center}.tariff-card{flex:1 1 200px}.author-block{text-align:center}.author-photo{max-width:220px}.divider-block p{font-size:1.1rem}.problems-slider .slider-slide .card img{height:160px}}
-        @media (max-width:768px){.tariffs{flex-direction:column;align-items:center}.tariff-card{max-width:360px;width:100%}.form-wrapper{padding:30px 20px}.form-grid{grid-template-columns:1fr}.divider-block p{font-size:1rem}.problems-slider .slider-slide .card{padding:20px 15px}.problems-slider .slider-slide .card h4{font-size:1.3rem}.format-card{padding:20px 15px}.format-card h3{font-size:1.1rem}.format-modal .modal-content{padding:20px;margin:10px}.format-modal .modal-content h3{font-size:1.4rem}.format-modal .modal-content p{font-size:.9rem}}
-        @media (max-width:640px){.grid-3,.grid-4{grid-template-columns:1fr}h1{font-size:2rem}h2{font-size:1.8rem}.header .container{flex-wrap:wrap}.nav{margin-top:12px;width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.nav a{margin:0;font-size:.85rem}.section{padding:50px 0}.divider-block p{font-size:.95rem}.problems-slider .slider-slide .card img{height:140px}.format-card{padding:16px 12px}.format-card h3{font-size:1rem}.format-card p{font-size:.85rem}.format-modal .modal-content{padding:16px}.format-modal .modal-content h3{font-size:1.2rem}}
+        @media (max-width:768px){.tariffs{flex-direction:column;align-items:center}.tariff-card{max-width:360px;width:100%}.form-wrapper{padding:30px 20px}.form-grid{grid-template-columns:1fr}.divider-block p{font-size:1rem}.problems-slider .slider-slide .card{padding:20px 15px}.problems-slider .slider-slide .card h4{font-size:1.3rem}.format-card{padding:20px 15px}.format-card h3{font-size:1.1rem}.format-modal .modal-content{padding:20px;margin:10px}.format-modal .modal-content h3{font-size:1.4rem}.format-modal .modal-content p{font-size:.9rem}.case-card .image-wrap{height:140px}}
+        @media (max-width:640px){.grid-3,.grid-4{grid-template-columns:1fr}h1{font-size:2rem}h2{font-size:1.8rem}.header .container{flex-wrap:wrap}.nav{margin-top:12px;width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.nav a{margin:0;font-size:.85rem}.section{padding:50px 0}.divider-block p{font-size:.95rem}.problems-slider .slider-slide .card img{height:140px}.format-card{padding:16px 12px}.format-card h3{font-size:1rem}.format-card p{font-size:.85rem}.format-modal .modal-content{padding:16px}.format-modal .modal-content h3{font-size:1.2rem}.case-card .image-wrap{height:120px}}
     </style>
 </head>
 <body>
@@ -388,43 +395,37 @@
         <h2>Реальные кейсы увеличения чека</h2>
         <div class="slider-wrapper" id="slider2">
             <div class="slider-track" id="sliderTrack2">
+                <!-- Кейс 1 -->
                 <div class="slider-slide">
-                    <div class="card case-card-clickable" onclick="openCaseModal('caseModal1')" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;cursor:pointer">
-                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/0d8a8bfd-ca11-4641-b578-9be67b0da3b8/0d8a8bfd-ca11-4641-b578-9be67b0da3b8-16616054.png" alt="Кейс 1">
-                        <div>
-                            <span class="slide-label">01 / 03</span>
-                            <h3>Кейс №1</h3>
-                            <p><strong>Как панорама 360° увеличила стоимость одной кухни на 88 000 ₽</strong></p>
-                            <p><u>Ситуация:</u> В салон обратилась молодая пара за кухней в стиле минимализм. Бюджет строго до 300 000 ₽. В процессе разработки проекта выяснилось, что есть пожелания, которые удорожают проект (стеклянные витрины с подсветкой). Клиенты не видели ценности в переплате, потому что не хватало наглядности.</p>
-                            <p><strong>Что было сделано:</strong> Проект из 3cad был экспортирован по нашей методике. Дизайнер добавил в сцену правильное освещение, декор и добавил в проект витрины с подсветкой, за которые клиент не хотел "переплачивать".</p>
-                            <p><strong>Результат:</strong> Увидев, как дорого и уютно выглядит кухня с подсветкой и витринами в объёме 360°, клиент сам попросил добавить эти опции в договор. <strong>Итог:</strong> 300 000 ₽ ➔ 380 000 ₽ (+30% к чеку)</p>
+                    <div class="case-card" onclick="openCaseModal('caseModal1')">
+                        <div class="image-wrap">
+                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/0d8a8bfd-ca11-4641-b578-9be67b0da3b8/0d8a8bfd-ca11-4641-b578-9be67b0da3b8-16616054.png" alt="Кейс 1">
                         </div>
+                        <h3>Кейс №1</h3>
+                        <p>Нажмите, чтобы узнать детали</p>
+                        <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
+                <!-- Кейс 2 (с заменой фото) -->
                 <div class="slider-slide">
-                    <div class="card case-card-clickable" onclick="openCaseModal('caseModal2')" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;cursor:pointer">
-                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/988771bb-4ec7-48e2-8a34-2ae14a1c7d0b/988771bb-4ec7-48e2-8a34-2ae14a1c7d0b-16616099.jpeg" alt="Кейс 2">
-                        <div>
-                            <span class="slide-label">02 / 03</span>
-                            <h3>Кейс №2</h3>
-                            <p><strong>Как VR-стойка привлекли уходящего от конкурента клиента и помогла закрыть сделку на 850 000 ₽</strong></p>
-                            <p><u>Задача:</u> Привлечь внимание платежеспособных клиентов в условиях жесткой конкуренции внутри торгового центра и выделиться на фоне соседних салонов.</p>
-                            <p><strong>Что было сделано:</strong> На фронтальную стойку салона выставили голову манекена в VR-очках с приглашением протестировать будущую кухню. Мужчина, который только что вышел из соседнего салона-конкурента, заметил инсталляцию и заинтересовался услугой. Дизайнер оперативно составил подробное ТЗ, а также предложил альтернативный вариант. После было разработано 2 проекта и записан видео-обзор по каждой концепции.</p>
-                            <p><strong>Результат:</strong> В течение недели клиент утвердил одну из концепций, пересмотрел проект в VR-очках и внес предоплату. <strong>Итог:</strong> + 850 000 ₽</p>
+                    <div class="case-card" onclick="openCaseModal('caseModal2')">
+                        <div class="image-wrap">
+                            <img src="img/keis2.jpg" alt="Кейс 2">
                         </div>
+                        <h3>Кейс №2</h3>
+                        <p>Нажмите, чтобы узнать детали</p>
+                        <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
+                <!-- Кейс 3 -->
                 <div class="slider-slide">
-                    <div class="card case-card-clickable" onclick="openCaseModal('caseModal3')" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;cursor:pointer">
-                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/4c0d5b06-d0df-4e69-ba18-e33e6abdaec1/4c0d5b06-d0df-4e69-ba18-e33e6abdaec1-16616141.png" alt="Кейс 3">
-                        <div>
-                            <span class="slide-label">03 / 03</span>
-                            <h3>Кейс №3</h3>
-                            <p><strong>Дистанционный "дожим" клиента и закрытие договора на 1 400 000 ₽</strong></p>
-                            <p><u>Задача:</u> Вернуть в воронку продаж клиента, который ушел из салона с готовым расчетом и перестал отвечать на звонки.</p>
-                            <p><strong>Что было сделано:</strong> Клиенту спроектировали кухню за 1 400 000 ₽, после чего он взял паузу и ушел сравнивать цены. В мессенджере клиент сообщения читал, но не отвечал. Для наглядности и доказательства ценности проекта был сделан видео-обзор с голосовыми комментариями.</p>
-                            <p><strong>Результат:</strong> Видеоформат наглядно доказал клиенту, за какие технические решения и уровень эргономики он платит. Сравнение с более дешевыми кустарными аналогами прекратилось. На следующий день клиент зафиксировал дату финального визита в салон для подписания договора и внесения предоплаты. <strong>Итог:</strong> + 1 400 000 ₽</p>
+                    <div class="case-card" onclick="openCaseModal('caseModal3')">
+                        <div class="image-wrap">
+                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/4c0d5b06-d0df-4e69-ba18-e33e6abdaec1/4c0d5b06-d0df-4e69-ba18-e33e6abdaec1-16616141.png" alt="Кейс 3">
                         </div>
+                        <h3>Кейс №3</h3>
+                        <p>Нажмите, чтобы узнать детали</p>
+                        <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
             </div>
@@ -439,7 +440,7 @@
     </div>
 </section>
 
-<!-- Модальные окна для кейсов -->
+<!-- Модальные окна для кейсов (содержат полное описание) -->
 <div id="caseModal1" class="format-modal" onclick="if(event.target===this) closeCaseModal('caseModal1')">
     <div class="modal-content">
         <button class="modal-close" onclick="closeCaseModal('caseModal1')">&times;</button>
@@ -456,7 +457,7 @@
 <div id="caseModal2" class="format-modal" onclick="if(event.target===this) closeCaseModal('caseModal2')">
     <div class="modal-content">
         <button class="modal-close" onclick="closeCaseModal('caseModal2')">&times;</button>
-        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/988771bb-4ec7-48e2-8a34-2ae14a1c7d0b/988771bb-4ec7-48e2-8a34-2ae14a1c7d0b-16616099.jpeg" alt="Кейс 2">
+        <img src="img/keis2.jpg" alt="Кейс 2">
         <h3>Кейс №2</h3>
         <p><strong>Как VR-стойка привлекли уходящего от конкурента клиента и помогла закрыть сделку на 850 000 ₽</strong></p>
         <p><u>Задача:</u> Привлечь внимание платежеспособных клиентов в условиях жесткой конкуренции внутри торгового центра и выделиться на фоне соседних салонов.</p>
