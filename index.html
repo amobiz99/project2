@@ -59,7 +59,6 @@
         .format-card h3{font-size:1.3rem;margin-bottom:8px}
         .format-card p{font-size:.95rem;color:#555;flex-grow:1}
         .format-card .link-more{display:inline-block;margin-top:12px;color:#ffdd2d;font-weight:700}
-        /* стили для карточек кейсов */
         .case-card{background:#fff;border-radius:16px;padding:20px 15px;box-shadow:0 4px 12px rgba(0,0,0,.05);cursor:pointer;transition:transform .2s,box-shadow .2s;text-align:center;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
         .case-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
         .case-card .image-wrap{height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;width:100%}
@@ -67,6 +66,16 @@
         .case-card h3{font-size:1.3rem;margin-bottom:6px}
         .case-card p{font-size:.9rem;color:#777;flex-grow:1}
         .case-card .link-more{display:inline-block;margin-top:10px;color:#ffdd2d;font-weight:700}
+        /* аккордеон для программы */
+        .program-list{margin-top:30px}
+        .program-item{border-bottom:1px solid rgba(255,255,255,.1);padding:16px 0}
+        .program-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:400;font-size:1.1rem;font-family:'Unbounded',sans-serif;color:#fff}
+        .program-question .icon{font-size:28px;font-weight:300;transition:transform .3s;color:#ffdd2d}
+        .program-question .icon.open{transform:rotate(45deg)}
+        .program-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 0 0 20px;border-left:3px solid #ffdd2d;margin-top:4px;color:#ddd}
+        .program-answer.open{max-height:800px;padding:12px 0 12px 20px}
+        .program-answer ul{list-style:disc;padding-left:20px;margin:8px 0}
+        .program-answer strong{color:#fff}
         .tariffs{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:40px}
         .tariff-card{background:#fff;border-radius:16px;padding:24px 20px;border:2px solid #e6e6e6;text-align:center;transition:border-color .3s;flex:1 1 260px;max-width:320px;display:flex;flex-direction:column}
         .tariff-card.popular{border-color:#ffdd2d;position:relative}
@@ -79,7 +88,7 @@
         .tariff-card .btn{width:100%;margin-top:auto}
         .faq-list{margin-top:40px}
         .faq-item{border-bottom:1px solid rgba(255,255,255,.1);padding:16px 0}
-        .faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:400;font-size:1.1rem;font-family:'Unbounded',sans-serif}
+        .faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:400;font-size:1.1rem;font-family:'Unbounded',sans-serif;color:#fff}
         .faq-question .icon{font-size:28px;font-weight:300;transition:transform .3s;color:#ffdd2d}
         .faq-question .icon.open{transform:rotate(45deg)}
         .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 0 0 20px;border-left:3px solid #ffdd2d;margin-top:4px;color:#ddd}
@@ -128,6 +137,7 @@
         .format-modal .modal-content img{width:100%;border-radius:12px;margin-bottom:16px;max-height:250px;object-fit:cover}
         .format-modal .modal-content h3{font-size:1.8rem;margin-bottom:12px}
         .format-modal .modal-content p{font-size:1rem;line-height:1.6;color:#444;margin-bottom:12px}
+        .format-modal .modal-content ul{color:#444;padding-left:20px;margin-bottom:16px}
         .format-modal .modal-content .btn-video{background:#ffdd2d;border:none;padding:12px 24px;border-radius:40px;font-weight:700;cursor:pointer;font-size:1rem;font-family:'Unbounded',sans-serif;transition:background .2s}
         .format-modal .modal-content .btn-video:hover{background:#f5c91a}
         .author-compact{line-height:1.5}
@@ -242,65 +252,7 @@
     </div>
 </section>
 
-<section class="section section-dark" id="program">
-    <div class="container">
-        <h2 style="color:#ffdd2d">Алгоритм работы: от чертежа до готовой панорамы 360° за 4 шага</h2>
-        <div class="accordion-list" style="margin-top:30px;display:flex;flex-direction:column;gap:12px">
-            <div class="accordion-item" style="background:#2a2a2a;border-radius:16px;overflow:hidden;cursor:pointer" onclick="toggleAccordion(this)">
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px">
-                    <div style="display:flex;align-items:center;gap:16px">
-                        <span style="font-size:2rem;font-weight:800;color:#ffdd2d;font-family:'Unbounded',sans-serif">1</span>
-                        <h4 style="color:#fff;font-size:1.25rem;margin:0">Точное проектирование</h4>
-                    </div>
-                    <span class="accordion-icon" style="font-size:24px;font-weight:300;color:#ffdd2d;transition:transform .3s">▼</span>
-                </div>
-                <div class="accordion-content" style="max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 24px;color:#ccc;font-size:.95rem;line-height:1.5">
-                    <p style="margin:0 0 16px 0">Менеджер строит технически точную кухню в программе 3cad, учитывая все габариты помещения, бытовую технику и особенности планировки.</p>
-                </div>
-            </div>
-            <div class="accordion-item" style="background:#2a2a2a;border-radius:16px;overflow:hidden;cursor:pointer" onclick="toggleAccordion(this)">
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px">
-                    <div style="display:flex;align-items:center;gap:16px">
-                        <span style="font-size:2rem;font-weight:800;color:#ffdd2d;font-family:'Unbounded',sans-serif">2</span>
-                        <h4 style="color:#fff;font-size:1.25rem;margin:0">Экспорт проекта</h4>
-                    </div>
-                    <span class="accordion-icon" style="font-size:24px;font-weight:300;color:#ffdd2d;transition:transform .3s">▼</span>
-                </div>
-                <div class="accordion-content" style="max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 24px;color:#ccc;font-size:.95rem;line-height:1.5">
-                    <p style="margin:0 0 16px 0">С помощью специального алгоритма проект переносится в базовый софт для визуализации. Все размеры, стыки модулей и геометрия сохраняются идеально — ничего не нужно перерисовывать заново.</p>
-                </div>
-            </div>
-            <div class="accordion-item" style="background:#2a2a2a;border-radius:16px;overflow:hidden;cursor:pointer" onclick="toggleAccordion(this)">
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px">
-                    <div style="display:flex;align-items:center;gap:16px">
-                        <span style="font-size:2rem;font-weight:800;color:#ffdd2d;font-family:'Unbounded',sans-serif">3</span>
-                        <h4 style="color:#fff;font-size:1.25rem;margin:0">Настройка света и расстановка деталей</h4>
-                    </div>
-                    <span class="accordion-icon" style="font-size:24px;font-weight:300;color:#ffdd2d;transition:transform .3s">▼</span>
-                </div>
-                <div class="accordion-content" style="max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 24px;color:#ccc;font-size:.95rem;line-height:1.5">
-                    <p style="margin:0 0 16px 0">Оживляем «голую» коробку интерьера. Расставляем реалистичный декор, посуду, текстиль и настраиваем мягкий, естественный свет. Кухня превращается из технического чертежа в уютное пространство мечты.</p>
-                </div>
-            </div>
-            <div class="accordion-item" style="background:#2a2a2a;border-radius:16px;overflow:hidden;cursor:pointer" onclick="toggleAccordion(this)">
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px">
-                    <div style="display:flex;align-items:center;gap:16px">
-                        <span style="font-size:2rem;font-weight:800;color:#ffdd2d;font-family:'Unbounded',sans-serif">4</span>
-                        <h4 style="color:#fff;font-size:1.25rem;margin:0">Готовая панорама 360°</h4>
-                    </div>
-                    <span class="accordion-icon" style="font-size:24px;font-weight:300;color:#ffdd2d;transition:transform .3s">▼</span>
-                </div>
-                <div class="accordion-content" style="max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 24px;color:#ccc;font-size:.95rem;line-height:1.5">
-                    <p style="margin:0 0 16px 0">Программа генерирует фотореалистичный рендер — высококачественное изображение сферической панорамы. Процесс рендеринга оптимизирован и занимает всего 20 минут, после чего панорама полностью готова к демонстрации.</p>
-                </div>
-            </div>
-        </div>
-        <div class="btn-center">
-            <a href="#tariffs" class="btn btn-primary">Начать обучение →</a>
-        </div>
-    </div>
-</section>
-
+<!-- 3 формата презентации -->
 <section class="section section-white">
     <div class="container">
         <h2>3 формата презентации клиенту:</h2>
@@ -348,6 +300,7 @@
     </div>
 </section>
 
+<!-- Модалки форматов -->
 <div id="formatModal1" class="format-modal" onclick="if(event.target===this) closeFormatModal('formatModal1')">
     <div class="modal-content">
         <button class="modal-close" onclick="closeFormatModal('formatModal1')">&times;</button>
@@ -381,6 +334,7 @@
     </div>
 </div>
 
+<!-- Блок "Звучит красиво..." -->
 <section class="section section-dark" style="padding:60px 0">
     <div class="container">
         <div class="divider-block">
@@ -390,12 +344,12 @@
     </div>
 </section>
 
+<!-- Реальные кейсы -->
 <section class="section section-white">
     <div class="container">
         <h2>Реальные кейсы увеличения чека</h2>
         <div class="slider-wrapper" id="slider2">
             <div class="slider-track" id="sliderTrack2">
-                <!-- Кейс 1 -->
                 <div class="slider-slide">
                     <div class="case-card" onclick="openCaseModal('caseModal1')">
                         <div class="image-wrap">
@@ -406,7 +360,6 @@
                         <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
-                <!-- Кейс 2 (с заменой фото) -->
                 <div class="slider-slide">
                     <div class="case-card" onclick="openCaseModal('caseModal2')">
                         <div class="image-wrap">
@@ -417,7 +370,6 @@
                         <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
-                <!-- Кейс 3 -->
                 <div class="slider-slide">
                     <div class="case-card" onclick="openCaseModal('caseModal3')">
                         <div class="image-wrap">
@@ -440,7 +392,7 @@
     </div>
 </section>
 
-<!-- Модальные окна для кейсов (содержат полное описание) -->
+<!-- Модалки кейсов -->
 <div id="caseModal1" class="format-modal" onclick="if(event.target===this) closeCaseModal('caseModal1')">
     <div class="modal-content">
         <button class="modal-close" onclick="closeCaseModal('caseModal1')">&times;</button>
@@ -480,43 +432,98 @@
     </div>
 </div>
 
-<section class="section section-dark">
+<!-- ПРОГРАММА ИНТЕНСИВА (перенесена сюда) -->
+<section class="section section-dark" id="program">
     <div class="container">
-        <h2>Программа интенсива:</h2>
-        <div style="display:grid;gap:24px;margin-top:30px">
-            <div class="card card-dark" style="display:flex;gap:20px;align-items:flex-start">
-                <span class="step-number">1</span>
-                <div>
-                    <h4 style="color:#ffdd2d">Модуль 1: Подготовка проекта в 3cad и экспорт (1 день)</h4>
-                    <p>Изучение технических требований к 3D-модели перед переносом. Пошаговый алгоритм экспорта кухонного гарнитура без потери геометрии, размеров и стыков модулей. Разбор типичных ошибок, из-за которых ломается сетка при переносе между программами.</p>
+        <h2 style="color:#ffdd2d">Программа интенсива:</h2>
+        <div class="program-list">
+            <!-- Модуль 1 -->
+            <div class="program-item">
+                <div class="program-question" onclick="toggleProgram(this)">
+                    <span>Модуль 1: Подготовка проекта в 3cad и экспорт</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="program-answer">
+                    <p><strong>Длительность:</strong> 1 день</p>
+                    <p><strong>Что вы узнаете:</strong></p>
+                    <ul>
+                        <li>Технические требования к 3D-модели для успешного переноса</li>
+                        <li>Пошаговый алгоритм экспорта кухонного гарнитура без потери геометрии</li>
+                        <li>Как избежать типичных ошибок, из-за которых ломается сетка при переносе</li>
+                        <li>Проверка целостности модели после экспорта</li>
+                    </ul>
+                    <p><strong>Результат:</strong> Готовый к импорту проект в правильном формате.</p>
                 </div>
             </div>
-            <div class="card card-dark" style="display:flex;gap:20px;align-items:flex-start">
-                <span class="step-number">2</span>
-                <div>
-                    <h4 style="color:#ffdd2d">Модуль 2: Работа в принимающем софте и импорт проекта (2-5 день)</h4>
-                    <p>Интерфейс программы для визуализации и базовая настройка сцены. Правильный импорт проекта, подготовка пространства, порядок доработки проекта. Работа с текстурами, прорисовка дополнительных элементов, создание уникальных моделей.</p>
+            <!-- Модуль 2 -->
+            <div class="program-item">
+                <div class="program-question" onclick="toggleProgram(this)">
+                    <span>Модуль 2: Работа в принимающем софте и импорт</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="program-answer">
+                    <p><strong>Длительность:</strong> 2–5 день</p>
+                    <p><strong>Что вы узнаете:</strong></p>
+                    <ul>
+                        <li>Интерфейс программы для визуализации и базовая настройка сцены</li>
+                        <li>Правильный импорт проекта, подготовка пространства</li>
+                        <li>Порядок доработки проекта, работа с текстурами</li>
+                        <li>Прорисовка дополнительных элементов, создание уникальных моделей</li>
+                    </ul>
+                    <p><strong>Результат:</strong> Полностью подготовленная сцена для дальнейшей работы.</p>
                 </div>
             </div>
-            <div class="card card-dark" style="display:flex;gap:20px;align-items:flex-start">
-                <span class="step-number">3</span>
-                <div>
-                    <h4 style="color:#ffdd2d">Модуль 3: Маркетинг интерьера — свет и наполнение картинки (6 день)</h4>
-                    <p>Оживляем «голую» коробку интерьера. Расставляем реалистичный декор, посуду, текстиль и настраиваем мягкий, естественный свет. Кухня превращается из технического чертежа в уютное пространство мечты.</p>
+            <!-- Модуль 3 -->
+            <div class="program-item">
+                <div class="program-question" onclick="toggleProgram(this)">
+                    <span>Модуль 3: Маркетинг интерьера — свет и наполнение</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="program-answer">
+                    <p><strong>Длительность:</strong> 6 день</p>
+                    <p><strong>Что вы узнаете:</strong></p>
+                    <ul>
+                        <li>Оживляем «голую» коробку интерьера</li>
+                        <li>Расстановка реалистичного декора, посуды, текстиля</li>
+                        <li>Настройка мягкого, естественного света</li>
+                        <li>Превращение технического чертежа в уютное пространство</li>
+                    </ul>
+                    <p><strong>Результат:</strong> Продающая картинка, вызывающая эмоции.</p>
                 </div>
             </div>
-            <div class="card card-dark" style="display:flex;gap:20px;align-items:flex-start">
-                <span class="step-number">4</span>
-                <div>
-                    <h4 style="color:#ffdd2d">Модуль 4: Генерация сферической панорамы 360° (7 день)</h4>
-                    <p>Настройка камеры для кругового обзора из обзорной точки. Оптимизация параметров рендеринга для быстрой генерации файла без перегрузки рабочего ноутбука. Получение финального файла панорамы в правильной развертке и проверка его корректного отображения.</p>
+            <!-- Модуль 4 -->
+            <div class="program-item">
+                <div class="program-question" onclick="toggleProgram(this)">
+                    <span>Модуль 4: Генерация сферической панорамы 360°</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="program-answer">
+                    <p><strong>Длительность:</strong> 7 день</p>
+                    <p><strong>Что вы узнаете:</strong></p>
+                    <ul>
+                        <li>Настройка камеры для кругового обзора</li>
+                        <li>Оптимизация параметров рендеринга для быстрой генерации</li>
+                        <li>Получение финального файла панорамы в правильной развертке</li>
+                        <li>Проверка корректного отображения</li>
+                    </ul>
+                    <p><strong>Результат:</strong> Готовая панорама 360° для презентации.</p>
                 </div>
             </div>
-            <div class="card card-dark" style="display:flex;gap:20px;align-items:flex-start">
-                <span class="step-number">5</span>
-                <div>
-                    <h4 style="color:#ffdd2d">Модуль 5: 3 формата презентации (8-9 день)</h4>
-                    <p>Инструмент 1: Алгоритм и техническая запись видеообзора кухни с экрана смартфона с продающей озвучкой дизайнера.<br>Инструмент 2: Подготовка и загрузка панорамы в VR-очки прямо в студии для работы с клиентами на встречах.<br>Инструмент 3: Сборка сложных интерактивных 3D-туров для премиальных объектов.</p>
+            <!-- Модуль 5 -->
+            <div class="program-item">
+                <div class="program-question" onclick="toggleProgram(this)">
+                    <span>Модуль 5: 3 формата презентации</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="program-answer">
+                    <p><strong>Длительность:</strong> 8–9 день</p>
+                    <p><strong>Что вы узнаете:</strong></p>
+                    <ul>
+                        <li><strong>Инструмент 1:</strong> Алгоритм и техническая запись видеообзора кухни с экрана смартфона с продающей озвучкой</li>
+                        <li><strong>Инструмент 2:</strong> Подготовка и загрузка панорамы в VR-очки прямо в студии</li>
+                        <li><strong>Инструмент 3:</strong> Сборка сложных интерактивных 3D-туров для премиальных объектов</li>
+                    </ul>
+                    <p><strong>Результат:</strong> Набор инструментов для работы с клиентами на всех этапах.</p>
                 </div>
             </div>
         </div>
@@ -526,6 +533,7 @@
     </div>
 </section>
 
+<!-- Тарифы -->
 <section class="section section-white" id="tariffs">
     <div class="container">
         <h2>Тарифы</h2>
@@ -580,6 +588,7 @@
     </div>
 </section>
 
+<!-- FAQ -->
 <section class="section section-dark" id="faq">
     <div class="container">
         <h2>Часто задаваемые вопросы:</h2>
@@ -654,6 +663,7 @@
     </div>
 </section>
 
+<!-- Форма -->
 <section class="form-section" id="contact">
     <div class="container">
         <div class="form-wrapper">
@@ -687,6 +697,7 @@
     </div>
 </section>
 
+<!-- Футер -->
 <footer class="footer">
     <div class="container">
         <div class="footer-col">
@@ -710,6 +721,7 @@
     </div>
 </footer>
 
+<!-- Видео-модалка -->
 <div id="videoModal" class="video-modal">
     <div class="video-modal-content">
         <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
@@ -718,6 +730,22 @@
 </div>
 
 <script>
+    // Аккордеон для программы
+    function toggleProgram(el) {
+        const answer = el.nextElementSibling;
+        const icon = el.querySelector('.icon');
+        if (answer.classList.contains('open')) {
+            answer.classList.remove('open');
+            icon.textContent = '+';
+            icon.classList.remove('open');
+        } else {
+            answer.classList.add('open');
+            icon.textContent = '−';
+            icon.classList.add('open');
+        }
+    }
+
+    // FAQ
     function toggleFaq(el) {
         const answer = el.nextElementSibling;
         const icon = el.querySelector('.icon');
@@ -732,6 +760,7 @@
         }
     }
 
+    // Слайдеры
     const sliders = {};
     function initSlider(id) {
         const track = document.getElementById('sliderTrack' + id.slice(-1));
@@ -774,23 +803,9 @@
     window.slideNext = slideNext;
     window.slidePrev = slidePrev;
     window.toggleFaq = toggleFaq;
+    window.toggleProgram = toggleProgram;
 
-    function toggleAccordion(el) {
-        const content = el.querySelector('.accordion-content');
-        const icon = el.querySelector('.accordion-icon');
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-            content.style.maxHeight = '0px';
-            content.style.padding = '0 24px';
-            icon.textContent = '▼';
-            icon.style.transform = 'rotate(0deg)';
-        } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            content.style.padding = '0 24px 16px 24px';
-            icon.textContent = '▲';
-            icon.style.transform = 'rotate(180deg)';
-        }
-    }
-
+    // Модалки форматов и кейсов
     function openFormatModal(id) {
         document.getElementById(id).classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -799,7 +814,6 @@
         document.getElementById(id).classList.remove('active');
         document.body.style.overflow = '';
     }
-
     function openCaseModal(id) {
         document.getElementById(id).classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -808,7 +822,6 @@
         document.getElementById(id).classList.remove('active');
         document.body.style.overflow = '';
     }
-
     function openVideoModal(src) {
         const modal = document.getElementById('videoModal');
         const video = modal.querySelector('video');
@@ -841,6 +854,7 @@
         }
     });
 
+    // Отправка формы
     const scriptURL = 'https://script.google.com/macros/s/XXXXX_ВАШ_ID_XXXXX/exec';
     const orderForm = document.getElementById('orderForm');
     const thanksMessage = document.getElementById('thanksMessage');
