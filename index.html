@@ -160,6 +160,28 @@
         .slider-btn:hover { background: #ddd; }
         .slider-slide .card img { height: 250px; object-fit: cover; }
 
+        .problems-slider .slider-slide .card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .problems-slider .slider-slide .card img {
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .problems-slider .slider-slide .card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            text-align: center;  /* заголовки по центру */
+        }
+        .problems-slider .slider-slide .card p {
+            font-size: 1rem;
+            color: #555;
+            max-width: 90%;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
         .tariffs {
             display: flex;
             flex-wrap: wrap;
@@ -261,7 +283,6 @@
             padding: 12px 0 12px 20px;
         }
 
-        /* Форма заявки (стилизована под реф) */
         .form-section {
             background: #fff;
             padding: 60px 0;
@@ -432,7 +453,6 @@
             font-weight: 400;
         }
 
-        /* Модальное окно для видео */
         .video-modal {
             display: none;
             position: fixed;
@@ -475,6 +495,23 @@
             display: block;
         }
 
+        /* Стили для раздела автора — компактный текст */
+        .author-compact {
+            line-height: 1.5;
+        }
+        .author-compact p {
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        .author-compact h3 {
+            text-align: center;
+            margin: 12px 0 8px;
+            color: #ffdd2d;
+        }
+        .text-center {
+            text-align: center;
+        }
+
         @media (max-width: 992px) {
             .hero .container { grid-template-columns: 1fr; text-align: center; }
             .hero-buttons .btn { margin: 8px; }
@@ -484,6 +521,7 @@
             .author-block { text-align: center; }
             .author-photo { max-width: 220px; }
             .divider-block p { font-size: 1.1rem; }
+            .problems-slider .slider-slide .card img { height: 160px; }
         }
         @media (max-width: 768px) {
             .tariffs { flex-direction: column; align-items: center; }
@@ -491,6 +529,8 @@
             .form-wrapper { padding: 30px 20px; }
             .form-grid { grid-template-columns: 1fr; }
             .divider-block p { font-size: 1rem; }
+            .problems-slider .slider-slide .card { padding: 20px 15px; }
+            .problems-slider .slider-slide .card h4 { font-size: 1.3rem; }
         }
         @media (max-width: 640px) {
             .grid-3, .grid-4 { grid-template-columns: 1fr; }
@@ -502,6 +542,7 @@
             .section { padding: 50px 0; }
             .divider-block p { font-size: 0.95rem; }
             .slider-slide .card img { height: 180px; }
+            .problems-slider .slider-slide .card img { height: 140px; }
         }
     </style>
 </head>
@@ -521,7 +562,7 @@
     </div>
 </header>
 
-<!-- HERO (текст из Реф) -->
+<!-- HERO -->
 <section class="hero" id="about">
     <div class="container">
         <div class="hero-content">
@@ -530,7 +571,6 @@
             <p>Научитесь за 10 дней переносить проекты из 3cad в базовый софт, создавать живые интерьеры и закрывать сделки через вау-эффект — без покупки дорогих компьютеров и раздувания штата.</p>
             <div class="hero-buttons">
                 <a href="#tariffs" class="btn btn-primary">Занять место на интенсиве</a>
-                <a href="#services" class="btn btn-secondary">Как увеличить чек?</a>
             </div>
         </div>
         <div class="hero-image">
@@ -539,48 +579,60 @@
     </div>
 </section>
 
-<!-- ПРОБЛЕМЫ (текст из Реф) -->
+<!-- ПРОБЛЕМЫ – карусель -->
 <section class="section section-white" id="services">
     <div class="container">
-        <h2>3 главные проблемы, которые решает интенсив:</h2>
-        <div class="grid-3">
-            <div class="card">
-                <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/caa47e17-f919-4839-b9c5-44f649294327/caa47e17-f919-4839-b9c5-44f649294327-16642914.png" alt="Клиенты не понимают результат">
-                <h4>Клиенты не понимают результат</h4>
-                <p>Обычные 3d картинки понятны менеджеру, но не обычному человеку. Клиент смотрит на проект из <b>3cad</b> и не может представить, как эта кухня будет смотреться в интерьере. Возникает страх ошибки, после чего человек уходит «подумать» и пропадает, потому что боится отдавать сотни тысяч за "непонятный" результат.</p>
+        <h2 class="text-center">3 главные проблемы, которые решает интенсив:</h2>
+        <div class="slider-wrapper problems-slider" id="slider3">
+            <div class="slider-track" id="sliderTrack3">
+                <div class="slider-slide">
+                    <div class="card" style="padding: 20px 15px; text-align: center;">
+                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/caa47e17-f919-4839-b9c5-44f649294327/caa47e17-f919-4839-b9c5-44f649294327-16642914.png" alt="Клиенты не понимают результат" style="height:160px; object-fit:contain; margin-bottom:12px;">
+                        <h4 style="font-size:1.2rem; margin-bottom:8px; text-align:center;">Клиенты не понимают результат</h4>
+                        <p style="font-size:0.9rem; line-height:1.4; text-align:center; margin:0 auto;">Обычные 3d картинки понятны менеджеру, но не обычному человеку. Клиент смотрит на проект из <b>3cad</b> и не может представить, как эта кухня будет смотреться в интерьере. Возникает страх ошибки, после чего человек уходит «подумать» и пропадает, потому что боится отдавать сотни тысяч за "непонятный" результат.</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <div class="card" style="padding: 20px 15px; text-align: center;">
+                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/751d2b9e-9a2d-454f-9057-5b854304a4a9/751d2b9e-9a2d-454f-9057-5b854304a4a9-16642916.png" alt="Долгая подготовка" style="height:160px; object-fit:contain; margin-bottom:12px;">
+                        <h4 style="font-size:1.2rem; margin-bottom:8px; text-align:center;">Долгая подготовка проекта</h4>
+                        <p style="font-size:0.9rem; line-height:1.4; text-align:center; margin:0 auto;">Пока клиент «горячий», ему нужно показать вау-эффект. Если дизайнер целый день подготавливает простую визуализацию — клиент остывает. За это время конкуренты "выкатывают" более интересное предложение, после чего клиент уходит от вас.</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <div class="card" style="padding: 20px 15px; text-align: center;">
+                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/c012f00b-88a0-44d2-a83a-8e73ac4034dd/c012f00b-88a0-44d2-a83a-8e73ac4034dd-16642919.png" alt="Низкий чек" style="height:160px; object-fit:contain; margin-bottom:12px;">
+                        <h4 style="font-size:1.2rem; margin-bottom:8px; text-align:center;">Низкий средний чек</h4>
+                        <p style="font-size:0.9rem; line-height:1.4; text-align:center; margin:0 auto;">Менеджеры продают только то, что попросил клиент, и не умеют наглядно предлагать дорогие опции. Если вы не можете показать клиенту, как круто в его интерьере будут смотреться подсветка, дорогие фасады или столовая группа — вы теряете до 50% дополнительной выручки.</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/751d2b9e-9a2d-454f-9057-5b854304a4a9/751d2b9e-9a2d-454f-9057-5b854304a4a9-16642916.png" alt="Долгая подготовка">
-                <h4>Долгая подготовка проекта</h4>
-                <p>Пока клиент «горячий», ему нужно показать вау-эффект. Если дизайнер целый день подготавливает простую визуализацию — клиент остывает. За это время конкуренты "выкатывают" более интересное предложение, после чего клиент уходит от вас.</p>
-            </div>
-            <div class="card">
-                <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/c012f00b-88a0-44d2-a83a-8e73ac4034dd/c012f00b-88a0-44d2-a83a-8e73ac4034dd-16642919.png" alt="Низкий чек">
-                <h4>Низкий средний чек</h4>
-                <p>Менеджеры продают только то, что попросил клиент, и не умеют наглядно предлагать дорогие опции. Если вы не можете показать клиенту, как круто в его интерьере будут смотреться подсветка, дорогие фасады или столовая группа — вы теряете до 50% дополнительной выручки.</p>
+            <div class="slider-controls">
+                <button class="slider-btn" onclick="slidePrev('slider3')">◀ Назад</button>
+                <button class="slider-btn" onclick="slideNext('slider3')">Вперёд ▶</button>
             </div>
         </div>
     </div>
 </section>
 
-<!-- АВТОР (текст из Реф) -->
+<!-- АВТОР – заголовок над фото, имя под фото, текст компактный -->
 <section class="section section-dark">
     <div class="container">
-        <div class="grid-2">
+        <h2 class="text-center" style="color:#fff;">Автор интенсива:</h2>
+        <div class="grid-2" style="margin-top:20px;">
             <div class="author-block">
                 <img class="author-photo" src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/a9657fbc-d7ab-427b-91d3-43b1be76fef8.png" alt="Александр Морин">
             </div>
-            <div>
-                <h2>Автор интенсива:</h2>
-                <h3 style="margin:12px 0 8px; color:#ffdd2d;">Александр Морин</h3>
-                <p style="font-size:1.1rem; color:#ddd;">Специалист по внедрению VR-презентаций в мебельных салонах.</p>
-                <p style="margin-top:16px; color:#ddd;">Этот интенсив родился из практической задачи: как <span style="color:#ffdd2d;">продавать мебель легко и дорого</span> через уникальный формат презентаций и вау-эффект.<br><br>Я не учу вас рисовать абстрактные интерьеры. Я показываю готовую связку: как без ошибок <span style="color:#ffdd2d;">перенести проект из 3cad</span>, наполнить интерьер деталями и <span style="color:#ffdd2d;">показать клиенту вау-эффект</span> прямо на экране смартфона или VR-очках.</p>
+            <div class="author-compact">
+                <h3>Александр Морин</h3>
+                <p style="color:#ddd;">Специалист по внедрению VR-презентаций в мебельных салонах.</p>
+                <p style="margin-top:12px; color:#ddd;">Этот интенсив родился из практической задачи: как <span style="color:#ffdd2d;">продавать мебель легко и дорого</span> через уникальный формат презентаций и вау-эффект.<br><br>Я не учу вас рисовать абстрактные интерьеры. Я показываю готовую связку: как без ошибок <span style="color:#ffdd2d;">перенести проект из 3cad</span>, наполнить интерьер деталями и <span style="color:#ffdd2d;">показать клиенту вау-эффект</span> прямо на экране смартфона или VR-очках.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ФАКТЫ В ЦИФРАХ (текст из Реф) -->
+<!-- ФАКТЫ В ЦИФРАХ -->
 <section class="section section-white">
     <div class="container">
         <h2>Факты в цифрах:</h2>
@@ -601,30 +653,62 @@
     </div>
 </section>
 
-<!-- АЛГОРИТМ (текст из Реф) -->
+<!-- АЛГОРИТМ -->
 <section class="section section-dark" id="program">
     <div class="container">
         <h2 style="color:#ffdd2d;">Алгоритм работы: от чертежа до готовой панорамы 360° за 4 шага</h2>
-        <div class="grid-4" style="margin-top:30px;">
-            <div class="card card-dark">
-                <div class="step-number">1</div>
-                <h4>Точное проектирование</h4>
-                <p>Менеджер строит технически точную кухню в программе 3cad, учитывая все габариты помещения, бытовую технику и особенности планировки.</p>
+        <div class="accordion-list" style="margin-top:30px; display:flex; flex-direction:column; gap:12px;">
+            <!-- Пункт 1 -->
+            <div class="accordion-item" style="background:#2a2a2a; border-radius:16px; overflow:hidden; cursor:pointer;" onclick="toggleAccordion(this)">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <span style="font-size:2rem; font-weight:800; color:#ffdd2d; font-family:'Unbounded',sans-serif;">1</span>
+                        <h4 style="color:#fff; font-size:1.25rem; margin:0;">Точное проектирование</h4>
+                    </div>
+                    <span class="accordion-icon" style="font-size:24px; font-weight:300; color:#ffdd2d; transition:transform 0.3s;">▼</span>
+                </div>
+                <div class="accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; padding:0 24px; color:#ccc; font-size:0.95rem; line-height:1.5;">
+                    <p style="margin:0 0 16px 0;">Менеджер строит технически точную кухню в программе 3cad, учитывая все габариты помещения, бытовую технику и особенности планировки.</p>
+                </div>
             </div>
-            <div class="card card-dark">
-                <div class="step-number">2</div>
-                <h4>Экспорт проекта</h4>
-                <p>С помощью специального алгоритма проект переносится в базовый софт для визуализации. Все размеры, стыки модулей и геометрия сохраняются идеально — ничего не нужно перерисовывать заново.</p>
+            <!-- Пункт 2 -->
+            <div class="accordion-item" style="background:#2a2a2a; border-radius:16px; overflow:hidden; cursor:pointer;" onclick="toggleAccordion(this)">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <span style="font-size:2rem; font-weight:800; color:#ffdd2d; font-family:'Unbounded',sans-serif;">2</span>
+                        <h4 style="color:#fff; font-size:1.25rem; margin:0;">Экспорт проекта</h4>
+                    </div>
+                    <span class="accordion-icon" style="font-size:24px; font-weight:300; color:#ffdd2d; transition:transform 0.3s;">▼</span>
+                </div>
+                <div class="accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; padding:0 24px; color:#ccc; font-size:0.95rem; line-height:1.5;">
+                    <p style="margin:0 0 16px 0;">С помощью специального алгоритма проект переносится в базовый софт для визуализации. Все размеры, стыки модулей и геометрия сохраняются идеально — ничего не нужно перерисовывать заново.</p>
+                </div>
             </div>
-            <div class="card card-dark">
-                <div class="step-number">3</div>
-                <h4>Настройка света и расстановка деталей</h4>
-                <p>Оживляем «голую» коробку интерьера. Расставляем реалистичный декор, посуду, текстиль и настраиваем мягкий, естественный свет. Кухня превращается из технического чертежа в уютное пространство мечты.</p>
+            <!-- Пункт 3 -->
+            <div class="accordion-item" style="background:#2a2a2a; border-radius:16px; overflow:hidden; cursor:pointer;" onclick="toggleAccordion(this)">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <span style="font-size:2rem; font-weight:800; color:#ffdd2d; font-family:'Unbounded',sans-serif;">3</span>
+                        <h4 style="color:#fff; font-size:1.25rem; margin:0;">Настройка света и расстановка деталей</h4>
+                    </div>
+                    <span class="accordion-icon" style="font-size:24px; font-weight:300; color:#ffdd2d; transition:transform 0.3s;">▼</span>
+                </div>
+                <div class="accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; padding:0 24px; color:#ccc; font-size:0.95rem; line-height:1.5;">
+                    <p style="margin:0 0 16px 0;">Оживляем «голую» коробку интерьера. Расставляем реалистичный декор, посуду, текстиль и настраиваем мягкий, естественный свет. Кухня превращается из технического чертежа в уютное пространство мечты.</p>
+                </div>
             </div>
-            <div class="card card-dark">
-                <div class="step-number">4</div>
-                <h4>Готовая панорама 360°</h4>
-                <p>Программа генерирует фотореалистичный рендер — высококачественное изображение сферической панорамы. Процесс рендеринга оптимизирован и занимает всего 20 минут, после чего панорама полностью готова к демонстрации.</p>
+            <!-- Пункт 4 -->
+            <div class="accordion-item" style="background:#2a2a2a; border-radius:16px; overflow:hidden; cursor:pointer;" onclick="toggleAccordion(this)">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px;">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <span style="font-size:2rem; font-weight:800; color:#ffdd2d; font-family:'Unbounded',sans-serif;">4</span>
+                        <h4 style="color:#fff; font-size:1.25rem; margin:0;">Готовая панорама 360°</h4>
+                    </div>
+                    <span class="accordion-icon" style="font-size:24px; font-weight:300; color:#ffdd2d; transition:transform 0.3s;">▼</span>
+                </div>
+                <div class="accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; padding:0 24px; color:#ccc; font-size:0.95rem; line-height:1.5;">
+                    <p style="margin:0 0 16px 0;">Программа генерирует фотореалистичный рендер — высококачественное изображение сферической панорамы. Процесс рендеринга оптимизирован и занимает всего 20 минут, после чего панорама полностью готова к демонстрации.</p>
+                </div>
             </div>
         </div>
         <div class="btn-center">
@@ -633,46 +717,295 @@
     </div>
 </section>
 
-<!-- 3 ФОРМАТА ПРЕЗЕНТАЦИИ (текст из Реф) -->
+<script>
+    function toggleAccordion(el) {
+        const content = el.querySelector('.accordion-content');
+        const icon = el.querySelector('.accordion-icon');
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+            content.style.maxHeight = '0px';
+            content.style.padding = '0 24px';
+            icon.textContent = '▼';
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.padding = '0 24px 16px 24px';
+            icon.textContent = '▲';
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+</script>
+
+<script>
+    function toggleAccordion(el) {
+        const content = el.querySelector('.accordion-content');
+        const icon = el.querySelector('.accordion-icon');
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+            content.style.maxHeight = '0px';
+            content.style.padding = '0 24px';
+            icon.textContent = '✓';
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.padding = '0 24px 16px 24px';
+            icon.textContent = '✕';
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+</script>
+
+<!-- 3 ФОРМАТА ПРЕЗЕНТАЦИИ -->
 <section class="section section-white">
+    <style>
+        .format-slide {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .format-slide .format-image {
+            flex: 0 0 48%;
+            max-width: 48%;
+        }
+        .format-slide .format-image img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+        .format-slide .format-text {
+            flex: 1;
+        }
+        .format-slide .format-text .slide-label {
+            color: #ffdd2d;
+            font-weight: 700;
+        }
+        .format-slide .format-text h3 {
+            font-size: 1.75rem;
+            margin: 8px 0 12px;
+        }
+        .format-slide .format-text p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .format-slide .format-text p strong {
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .format-slide {
+                flex-direction: column;
+                text-align: center;
+            }
+            .format-slide .format-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .format-slide .format-text {
+                text-align: center;
+            }
+            .format-slide .format-text h3 {
+                font-size: 1.5rem;
+            }
+            .format-slide .format-text p {
+                font-size: 0.95rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .format-slide .format-text h3 {
+                font-size: 1.3rem;
+            }
+            .format-slide .format-text p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <section class="section section-white">
+    <style>
+        .format-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .format-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .format-card .image-wrap {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .format-card .image-wrap img {
+            height: 100%;
+            object-fit: contain;
+        }
+        .format-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .format-card p {
+            font-size: 0.95rem;
+            color: #555;
+            flex-grow: 1;
+        }
+        .format-card .link-more {
+            display: inline-block;
+            margin-top: 12px;
+            color: #ffdd2d;
+            font-weight: 700;
+        }
+
+        /* Модальные окна (попапы) */
+        .format-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .format-modal.active {
+            display: flex;
+        }
+        .format-modal .modal-content {
+            background: #fff;
+            max-width: 700px;
+            width: 90%;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .format-modal .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .format-modal .modal-content img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        .format-modal .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        .format-modal .modal-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 12px;
+        }
+        .format-modal .modal-content .btn-video {
+            background: #ffdd2d;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Unbounded', sans-serif;
+            transition: background 0.2s;
+        }
+        .format-modal .modal-content .btn-video:hover {
+            background: #f5c91a;
+        }
+
+        @media (max-width: 768px) {
+            .format-card {
+                padding: 20px 15px;
+            }
+            .format-card h3 {
+                font-size: 1.1rem;
+            }
+            .format-modal .modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+            .format-modal .modal-content h3 {
+                font-size: 1.4rem;
+            }
+            .format-modal .modal-content p {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .format-card {
+                padding: 16px 12px;
+            }
+            .format-card h3 {
+                font-size: 1rem;
+            }
+            .format-card p {
+                font-size: 0.85rem;
+            }
+            .format-modal .modal-content {
+                padding: 16px;
+            }
+            .format-modal .modal-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
     <div class="container">
         <h2>3 формата презентации клиенту:</h2>
         <div class="slider-wrapper" id="slider1">
             <div class="slider-track" id="sliderTrack1">
+                <!-- Слайд 1 -->
                 <div class="slider-slide">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;">
-                        <div style="cursor:pointer;" onclick="openVideoModal()">
-                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/ff020770-1951-4dd8-9312-9152f92db68b/ff020770-1951-4dd8-9312-9152f92db68b-16655860.png" alt="Формат 1" style="border-radius:12px; width:100%;">
-                            <p style="text-align:center; margin-top:8px; font-size:0.9rem; color:#555; font-weight:500;">Нажми для просмотра видео-обзора</p>
+                    <div class="format-card" onclick="openFormatModal('formatModal1')">
+                        <div class="image-wrap">
+                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/ff020770-1951-4dd8-9312-9152f92db68b/ff020770-1951-4dd8-9312-9152f92db68b-16655860.png" alt="Видео-обзор">
                         </div>
-                        <div>
-                            <span class="slide-label">01 / 03</span>
-                            <h3>Видео-обзор</h3>
-                            <p>Дизайнер записывает короткий видео-обзор кухни, комментируя все фишки проекта.</p>
-                            <p style="margin-top:10px;"><strong>Зачем:</strong> Идеальный инструмент для «дожима» удаленных клиентов в ТГ или WhatsApp. Вместо сухих картинок клиент получает живую мини-презентацию.</p>
-                        </div>
+                        <h3>Видео-обзор</h3>
+                        <p>Дизайнер записывает короткий видео-обзор кухни, комментируя все фишки.</p>
+                        <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
+                <!-- Слайд 2 -->
                 <div class="slider-slide">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;">
-                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/3c957473-68d9-4d68-992d-9007ca2bd3b0/3c957473-68d9-4d68-992d-9007ca2bd3b0-16655861.png" alt="Формат 2" style="border-radius:12px; width:100%;">
-                        <div>
-                            <span class="slide-label">02 / 03</span>
-                            <h3>Просмотр через VR-очки</h3>
-                            <p>Готовая панорама 360° загружается в VR-очки и презентуется клиенту прямо в студии.</p>
-                            <p style="margin-top:10px;"><strong>Зачем:</strong> Мощный вау-эффект, который выделяет вас среди конкурентов. Клиент «оказывается» внутри своей будущей кухни, оценивает реальные габариты и снимает все страхи.</p>
+                    <div class="format-card" onclick="openFormatModal('formatModal2')">
+                        <div class="image-wrap">
+                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/3c957473-68d9-4d68-992d-9007ca2bd3b0/3c957473-68d9-4d68-992d-9007ca2bd3b0-16655861.png" alt="VR-очки">
                         </div>
+                        <h3>Просмотр через VR-очки</h3>
+                        <p>Панорама 360° загружается в VR-очки и презентуется клиенту прямо в студии.</p>
+                        <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
+                <!-- Слайд 3 -->
                 <div class="slider-slide">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;">
-                        <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/fc07e396-0d05-4cb2-b270-73c8e387454c/fc07e396-0d05-4cb2-b270-73c8e387454c-16655862.png" alt="Формат 3" style="border-radius:12px; width:100%;">
-                        <div>
-                            <span class="slide-label">03 / 03</span>
-                            <h3>Просмотр панорам 360°</h3>
-                            <p>Панорама размещается на специальных сервисах и клиенту направляется ссылка для просмотра.</p>
-                            <p style="margin-top:10px;"><strong>Зачем:</strong> Инструмент для работы с большими пространствами (кухни-гостиные) или дорогими премиальными заказами. Клиент может виртуально перемещаться по интерьеру.</p>
+                    <div class="format-card" onclick="openFormatModal('formatModal3')">
+                        <div class="image-wrap">
+                            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/fc07e396-0d05-4cb2-b270-73c8e387454c/fc07e396-0d05-4cb2-b270-73c8e387454c-16655862.png" alt="Панорамы 360">
                         </div>
+                        <h3>Просмотр панорам 360°</h3>
+                        <p>Панорама размещается на специальных сервисах и направляется ссылка.</p>
+                        <span class="link-more">Подробнее →</span>
                     </div>
                 </div>
             </div>
@@ -685,9 +1018,111 @@
             <a href="#tariffs" class="btn btn-primary">Получить все форматы →</a>
         </div>
     </div>
+
+    <!-- Попап 1 -->
+    <div id="formatModal1" class="format-modal" onclick="if(event.target===this) closeFormatModal('formatModal1')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFormatModal('formatModal1')">&times;</button>
+            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/ff020770-1951-4dd8-9312-9152f92db68b/ff020770-1951-4dd8-9312-9152f92db68b-16655860.png" alt="Видео-обзор">
+            <h3>Видео-обзор</h3>
+            <p><strong>Суть:</strong> Дизайнер записывает короткий видео-обзор кухни, комментируя все фишки проекта голосом.</p>
+            <p><strong>Зачем это бизнесу:</strong> Идеальный инструмент для «дожима» удаленных клиентов в ТГ или WhatsApp. Вместо сухих картинок клиент получает живую мини-презентацию. Это кратно поднимает сервис и конверсию в договор.</p>
+            <button class="btn-video" onclick="closeFormatModal('formatModal1'); openVideoModal('img/for Denis.mp4');">Смотреть видео-пример →</button>
+        </div>
+    </div>
+
+    <!-- Попап 2 -->
+    <div id="formatModal2" class="format-modal" onclick="if(event.target===this) closeFormatModal('formatModal2')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFormatModal('formatModal2')">&times;</button>
+            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/3c957473-68d9-4d68-992d-9007ca2bd3b0/3c957473-68d9-4d68-992d-9007ca2bd3b0-16655861.png" alt="VR-очки">
+            <h3>Просмотр через VR-очки</h3>
+            <p><strong>Суть:</strong> Готовый файл панорамы загружается в мобильные VR-очки прямо в вашей мебельной студии.</p>
+            <p><strong>Зачем это бизнесу:</strong> Мощный вау-эффект, который выделяет вас среди конкурентов. Клиент надевает очки прямо на встрече и физически «оказывается» внутри своей будущей кухни. Он оценивает реальные габариты, ширину проходов и высоту столешницы. Любые страхи и возражения отпадают — человек готов платить.</p>
+            <button class="btn-video" onclick="closeFormatModal('formatModal2'); openVideoModal('img/For Elena.mp4');">Смотреть видео-пример →</button>
+        </div>
+    </div>
+
+    <!-- Попап 3 -->
+    <div id="formatModal3" class="format-modal" onclick="if(event.target===this) closeFormatModal('formatModal3')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFormatModal('formatModal3')">&times;</button>
+            <img src="https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site1147580/fc07e396-0d05-4cb2-b270-73c8e387454c/fc07e396-0d05-4cb2-b270-73c8e387454c-16655862.png" alt="Панорамы 360">
+            <h3>Просмотр панорам 360°</h3>
+            <p><strong>Суть:</strong> Размещение панорам на специализированных сервисах, добавление текстовых описаний к элементам мебели и связывание нескольких панорам в единый интерактивный тур.</p>
+            <p><strong>Зачем это бизнесу:</strong> Инструмент для работы с большими пространствами (кухни-гостиные) или дорогими премиальными заказами. Клиент может не просто крутить головой, а виртуально перемещаться по будущему интерьеру квартиры.</p>
+            <button class="btn-video" onclick="closeFormatModal('formatModal3'); window.open('img/panorama.html', '_blank');">Открыть панораму →</button>
+        </div>
+    </div>
 </section>
 
-<!-- РАЗДЕЛИТЕЛЬ (текст из Реф) -->
+<script>
+    // Функции для открытия/закрытия попапов
+    function openFormatModal(id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeFormatModal(id) {
+        document.getElementById(id).classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Функция для открытия видео-модалки с указанным источником
+    function openVideoModal(src) {
+        var modal = document.getElementById('videoModal');
+        var video = modal.querySelector('video');
+        if (video) {
+            video.src = src;
+            video.load();
+            modal.classList.add('active');
+            video.play();
+        }
+    }
+
+    // Переопределяем стандартную функцию закрытия, чтобы не сбрасывать src
+    if (typeof closeVideoModal === 'function') {
+        var originalClose = closeVideoModal;
+        window.closeVideoModal = function() {
+            var modal = document.getElementById('videoModal');
+            if (modal) {
+                var video = modal.querySelector('video');
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        };
+    } else {
+        window.closeVideoModal = function() {
+            var modal = document.getElementById('videoModal');
+            if (modal) {
+                var video = modal.querySelector('video');
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        };
+    }
+
+    // Обработчик клика по фону видео-модалки
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('videoModal');
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    window.closeVideoModal();
+                }
+            });
+        }
+    });
+</script>
+
+<!-- РАЗДЕЛИТЕЛЬ -->
 <section class="section section-dark" style="padding: 60px 0;">
     <div class="container">
         <div class="divider-block">
@@ -697,7 +1132,7 @@
     </div>
 </section>
 
-<!-- КЕЙСЫ (текст из Реф) -->
+<!-- КЕЙСЫ -->
 <section class="section section-white">
     <div class="container">
         <h2>Реальные кейсы увеличения чека</h2>
@@ -754,7 +1189,7 @@
     </div>
 </section>
 
-<!-- ПРОГРАММА (5 модулей из Реф) -->
+<!-- ПРОГРАММА -->
 <section class="section section-dark">
     <div class="container">
         <h2>Программа интенсива:</h2>
@@ -801,7 +1236,7 @@
     </div>
 </section>
 
-<!-- ТАРИФЫ (текст из Реф) -->
+<!-- ТАРИФЫ -->
 <section class="section section-white" id="tariffs">
     <div class="container">
         <h2>Тарифы</h2>
@@ -856,7 +1291,7 @@
     </div>
 </section>
 
-<!-- FAQ (текст из Реф) -->
+<!-- FAQ -->
 <section class="section section-dark" id="faq">
     <div class="container">
         <h2>Часто задаваемые вопросы:</h2>
@@ -931,7 +1366,7 @@
     </div>
 </section>
 
-<!-- ФОРМА ЗАЯВКИ (как в Реф) -->
+<!-- ФОРМА ЗАЯВКИ -->
 <section class="form-section" id="contact">
     <div class="container">
         <div class="form-wrapper">
@@ -1044,6 +1479,7 @@
     window.addEventListener('load', function() {
         initSlider('slider1');
         initSlider('slider2');
+        initSlider('slider3');
         var resizeTimeout;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
