@@ -80,8 +80,37 @@
         .tariff-card{background:#fff;border-radius:16px;padding:24px 20px;border:2px solid #e6e6e6;text-align:center;transition:border-color .3s;flex:1 1 260px;max-width:320px;display:flex;flex-direction:column}
         .tariff-card.popular{border-color:#ffdd2d;position:relative}
         .tariff-card.popular::before{content:"Хит";background:#ffdd2d;color:#1a1a1a;padding:4px 16px;border-radius:20px;font-weight:700;font-size:.8rem;position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-family:'Unbounded',sans-serif}
-        .tariff-card .price{font-size:2.2rem;font-weight:800;margin:12px 0 4px;font-family:'Unbounded',sans-serif}
-        .tariff-card .period{color:#777;font-size:.9rem}
+        /* новые стили для цен */
+        .price-block {
+            margin: 12px 0 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+        .new-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            animation: popIn 0.5s ease forwards;
+            transform-origin: center;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.08); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .tariff-card .period {
+            color: #777;
+            font-size: .9rem;
+            margin-top: -4px;
+        }
+        /* конец новых стилей */
         .tariff-card ul{list-style:none;text-align:left;margin:16px 0 20px;padding:0;flex-grow:1}
         .tariff-card ul li{padding:5px 0;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;font-size:.95rem}
         .tariff-card ul li::before{content:"✓";color:#ffdd2d;font-weight:700;margin-right:10px}
@@ -432,7 +461,7 @@
     </div>
 </div>
 
-<!-- ПРОГРАММА ИНТЕНСИВА (перенесена сюда) -->
+<!-- ПРОГРАММА ИНТЕНСИВА -->
 <section class="section section-dark" id="program">
     <div class="container">
         <h2 style="color:#ffdd2d">Программа интенсива:</h2>
@@ -539,9 +568,13 @@
         <h2>Тарифы</h2>
         <p style="font-size:1.1rem;color:#666">С постоянным доступом на 3 или 6 месяцев</p>
         <div class="tariffs">
+            <!-- Тариф "Сингл" -->
             <div class="tariff-card">
                 <h3>"Сингл"</h3>
-                <div class="price">24 900 ₽</div>
+                <div class="price-block">
+                    <span class="old-price">80 000 ₽</span>
+                    <span class="new-price">24 900 ₽</span>
+                </div>
                 <div class="period">3 месяца</div>
                 <ul>
                     <li>Личный доступ для <b>1 человека</b></li>
@@ -554,9 +587,13 @@
                 </ul>
                 <a href="#order" class="btn btn-secondary" style="border-color:#ddd">Оформить</a>
             </div>
+            <!-- Тариф "Студия" (популярный) -->
             <div class="tariff-card popular">
                 <h3>"Студия"</h3>
-                <div class="price">49 900 ₽</div>
+                <div class="price-block">
+                    <span class="old-price">170 000 ₽</span>
+                    <span class="new-price">49 900 ₽</span>
+                </div>
                 <div class="period">3 месяца</div>
                 <ul>
                     <li>Доступ сразу для <b>3 сотрудников</b> студии</li>
@@ -569,9 +606,13 @@
                 </ul>
                 <a href="#order" class="btn btn-primary">Оформить</a>
             </div>
+            <!-- Тариф "Студия" + Наставничество -->
             <div class="tariff-card">
                 <h3>"Студия" + Наставничество</h3>
-                <div class="price">199 900 ₽</div>
+                <div class="price-block">
+                    <span class="old-price">660 000 ₽</span>
+                    <span class="new-price">199 900 ₽</span>
+                </div>
                 <div class="period">6 месяцев</div>
                 <ul>
                     <li>Доступ сразу для <b>3 сотрудников</b> студии</li>
