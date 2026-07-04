@@ -66,7 +66,6 @@
         .case-card h3{font-size:1.3rem;margin-bottom:6px}
         .case-card p{font-size:.9rem;color:#777;flex-grow:1}
         .case-card .link-more{display:inline-block;margin-top:10px;color:#ffdd2d;font-weight:700}
-        /* аккордеон для программы */
         .program-list{margin-top:30px}
         .program-item{border-bottom:1px solid rgba(255,255,255,.1);padding:16px 0}
         .program-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:400;font-size:1.1rem;font-family:'Unbounded',sans-serif;color:#fff}
@@ -80,37 +79,11 @@
         .tariff-card{background:#fff;border-radius:16px;padding:24px 20px;border:2px solid #e6e6e6;text-align:center;transition:border-color .3s;flex:1 1 260px;max-width:320px;display:flex;flex-direction:column}
         .tariff-card.popular{border-color:#ffdd2d;position:relative}
         .tariff-card.popular::before{content:"Хит";background:#ffdd2d;color:#1a1a1a;padding:4px 16px;border-radius:20px;font-weight:700;font-size:.8rem;position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-family:'Unbounded',sans-serif}
-        /* новые стили для цен */
-        .price-block {
-            margin: 12px 0 4px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .old-price {
-            text-decoration: line-through;
-            color: #aaa;
-            font-size: 1.1rem;
-            margin-bottom: 2px;
-        }
-        .new-price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #1a1a1a;
-            animation: popIn 0.5s ease forwards;
-            transform-origin: center;
-        }
-        @keyframes popIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            80% { transform: scale(1.08); opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .tariff-card .period {
-            color: #777;
-            font-size: .9rem;
-            margin-top: -4px;
-        }
-        /* конец новых стилей */
+        .price-block{margin:12px 0 4px;display:flex;flex-direction:column;align-items:center}
+        .old-price{text-decoration:line-through;color:#aaa;font-size:1.1rem;margin-bottom:2px}
+        .new-price{font-size:2.2rem;font-weight:800;color:#1a1a1a;animation:popIn 0.5s ease forwards;transform-origin:center}
+        @keyframes popIn{0%{transform:scale(0.5);opacity:0}80%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
+        .tariff-card .period{color:#777;font-size:.9rem;margin-top:-4px}
         .tariff-card ul{list-style:none;text-align:left;margin:16px 0 20px;padding:0;flex-grow:1}
         .tariff-card ul li{padding:5px 0;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;font-size:.95rem}
         .tariff-card ul li::before{content:"✓";color:#ffdd2d;font-weight:700;margin-right:10px}
@@ -704,7 +677,7 @@
     </div>
 </section>
 
-<!-- Форма -->
+<!-- Форма (доработанная) -->
 <section class="form-section" id="contact">
     <div class="container">
         <div class="form-wrapper">
@@ -718,6 +691,14 @@
                 <div class="field">
                     <i>📞</i>
                     <input type="tel" name="phone" placeholder="Телефон" required>
+                </div>
+                <div class="field">
+                    <i>🏙️</i>
+                    <input type="text" name="city" placeholder="Город" required>
+                </div>
+                <div class="field">
+                    <i>👥</i>
+                    <input type="number" name="employees" placeholder="Количество сотрудников" required>
                 </div>
                 <div class="field field-full">
                     <i>💬</i>
@@ -895,30 +876,39 @@
         }
     });
 
-    // Отправка формы
-    const scriptURL = 'https://script.google.com/macros/s/XXXXX_ВАШ_ID_XXXXX/exec';
+    // ========== ОБНОВЛЁННАЯ ФОРМА ==========
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby1m94T-0TiW4ZFG6ghLNXEnJoeyb9sW7MMH64XzpkTwrOEAN-bseY7s_gpf-n3T5Il/exec';
     const orderForm = document.getElementById('orderForm');
     const thanksMessage = document.getElementById('thanksMessage');
+
     if (orderForm) {
         orderForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
             const submitButton = orderForm.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.innerText = 'Отправка...';
+
             const formData = new FormData(orderForm);
+
             fetch(scriptURL, { method: 'POST', body: formData })
-                .then(function(response) {
+                .then(response => response.json())
+                .then(data => {
                     submitButton.disabled = false;
                     submitButton.innerText = 'Задать вопрос';
-                    orderForm.reset();
-                    thanksMessage.style.display = 'block';
-                    setTimeout(function() { thanksMessage.style.display = 'none'; }, 6000);
+                    if (data.result === 'success') {
+                        orderForm.reset();
+                        thanksMessage.style.display = 'block';
+                        setTimeout(() => { thanksMessage.style.display = 'none'; }, 6000);
+                    } else {
+                        alert('Ошибка при отправке заказа. Пожалуйста, попробуйте позже.');
+                    }
                 })
-                .catch(function(error) {
-                    console.error('Ошибка!', error.message);
+                .catch(error => {
+                    console.error('Error!', error.message);
                     submitButton.disabled = false;
                     submitButton.innerText = 'Задать вопрос';
-                    alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+                    alert('Произошла ошибка соединения с сервером.');
                 });
         });
     }
