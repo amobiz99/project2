@@ -295,7 +295,7 @@
         <div class="hero-content">
             <p class="badge">ЭКСКЛЮЗИВНЫЙ ИНТЕНСИВ</p>
             <h1>Увеличь продажи кухонь при помощи VR-презентаций и панорам 360°</h1>
-            <p>Научитесь за 10 дней переносить проекты из 3cad в базовый софт, создавать живые интерьеры и закрывать сделки через вау-эффект — без покупки дорогих компьютеров и раздувания штата.</p>
+            <p>Научитесь за 10 дней переносить проекты из 3cad в программу PRO100, создавать живые интерьеры и закрывать сделки через вау-эффект — без покупки дорогих компьютеров и раздувания штата.</p>
             <div class="hero-buttons">
                 <a href="#tariffs" class="btn btn-primary">Занять место на интенсиве</a>
             </div>
@@ -581,7 +581,7 @@
                     <p><strong>Длительность:</strong> 2–5 день</p>
                     <p><strong>Что вы узнаете:</strong></p>
                     <ul>
-                        <li>Интерфейс программы для визуализации и базовая настройка сцены</li>
+                        <li>Интерфейс программы PRO100 и базовая настройка сцены</li>
                         <li>Правильный импорт проекта, подготовка пространства</li>
                         <li>Порядок доработки проекта, работа с текстурами</li>
                         <li>Прорисовка дополнительных элементов, создание уникальных моделей</li>
@@ -671,7 +671,7 @@
                             <li class="disabled">Проверка домашних заданий — нет</li>
                             <li class="disabled">Личное сопровождение автора — нет</li>
                         </ul>
-                        <a href="#order" class="btn btn-secondary" style="border-color:#ddd">Оформить</a>
+                        <a href="#contact" class="btn btn-secondary" style="border-color:#ddd">Оформить</a>
                     </div>
                 </div>
                 
@@ -692,7 +692,7 @@
                             <li class="disabled">Проверка домашних заданий — нет</li>
                             <li class="disabled">Личное сопровождение автора — нет</li>
                         </ul>
-                        <a href="#order" class="btn btn-primary">Оформить</a>
+                        <a href="#contact" class="btn btn-primary">Оформить</a>
                     </div>
                 </div>
                 
@@ -713,7 +713,7 @@
                             <li>Проверка домашних заданий</li>
                             <li>Личное сопровождение автора курса</li>
                         </ul>
-                        <a href="#order" class="btn btn-secondary" style="border-color:#ddd">Оформить</a>
+                        <a href="#contact" class="btn btn-secondary" style="border-color:#ddd">Оформить</a>
                     </div>
                 </div>
             </div>
@@ -800,7 +800,7 @@
     <div class="container">
         <div class="form-wrapper">
             <h2>Остались вопросы?</h2>
-            <p class="subtitle">Оставьте заявку. Мы свяжемся с вами, поможем выбрать тариф, пришлем тестовый договор и ответим на любые технические вопросы.</p>
+            <p class="subtitle">Оставьте заявку. Мы свяжемся с вами, поможем оформить тариф, пришлем тестовый договор и ответим на любые технические вопросы.</p>
             <form id="orderForm" class="form-grid">
                 <div class="field">
                     <i>👤</i>
@@ -838,13 +838,8 @@
         </div>
         <div class="footer-col">
             <h4>Контакты</h4>
-            <p>Телефон: +7 (999) 123-45-67</p>
-            <p>Email: info@example.com</p>
-            <div class="footer-socials">
-                <a href="#" aria-label="Telegram">📱</a>
-                <a href="#" aria-label="Email">✉️</a>
-                <a href="#" aria-label="Phone">📞</a>
-            </div>
+            <p>Телефон: +7 (952) 322-14-03</p>
+            <p>Email: morinbiz@yandex.ru</p>
         </div>
         <div class="footer-col legal-links">
             <h4>Документы</h4>
@@ -1010,7 +1005,8 @@ function openDocModal(pdfUrl) {
     const modal = document.getElementById('docModal');
     const iframe = document.getElementById('docFrame');
     if (modal && iframe) {
-        iframe.src = pdfUrl;
+        // Оборачиваем ссылку во встроенный вьюер Google
+        iframe.src = 'https://docs.google.com/gview?url=' + encodeURIComponent(pdfUrl) + '&embedded=true';
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
