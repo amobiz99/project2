@@ -264,6 +264,15 @@
     .section { padding: 40px 0; }
     .divider-block p { font-size: .95rem; }
 }
+    .doc-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:2000;justify-content:center;align-items:center}.doc-modal.active{display:flex}.doc-modal-content{background:#fff;width:90%;max-width:900px;height:85vh;border-radius:16px;position:relative;padding:40px 20px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3)}.doc-modal-close{position:absolute;top:10px;right:15px;font-size:28px;background:none;border:none;cursor:pointer;line-height:1;font-weight:700;color:#333}.doc-modal iframe{width:100%;height:100%;border:none;border-radius:8px}
+    .legal-links a{color:#ffdd2d;text-decoration:underline;cursor:pointer;font-size:.85rem}
+    .legal-links a:hover{text-decoration:none}
+    .form-footer{margin-top:16px;text-align:center}
+    .consent-label{display:inline-flex;align-items:flex-start;justify-content:center;gap:10px;text-align:center;max-width:550px;margin:0 auto;font-size:0.8rem;color:#777;line-height:1.4;cursor:default}
+    .consent-label input[type="checkbox"]{margin-top:2px;accent-color:#ffdd2d;flex-shrink:0}
+    .consent-label span{text-align:center}
+    .consent-label a{color:#1a1a1a;font-weight:700;text-decoration:underline;cursor:pointer}
+    .consent-label a:hover{color:#ffdd2d}
     </style>
 </head>
 <body>
@@ -285,7 +294,7 @@
     <div class="container">
         <div class="hero-content">
             <p class="badge">ЭКСКЛЮЗИВНЫЙ ИНТЕНСИВ</p>
-            <h1>Увеличь продажи кухонь до 50% при помощи VR-презентаций и панорам 360°</h1>
+            <h1>Увеличь продажи кухонь при помощи VR-презентаций и панорам 360°</h1>
             <p>Научитесь за 10 дней переносить проекты из 3cad в базовый софт, создавать живые интерьеры и закрывать сделки через вау-эффект — без покупки дорогих компьютеров и раздувания штата.</p>
             <div class="hero-buttons">
                 <a href="#tariffs" class="btn btn-primary">Занять место на интенсиве</a>
@@ -599,7 +608,7 @@
             </div>
             <div class="program-item">
                 <div class="program-question" onclick="toggleProgram(this)">
-                    <span>Модуль 4: Generation сферической панорамы 360°</span>
+                    <span>Модуль 4: Генерация сферической панорамы 360°</span>
                     <span class="icon">+</span>
                 </div>
                 <div class="program-answer">
@@ -808,11 +817,11 @@
                 <div class="form-submit">
                     <button type="submit" class="btn-gradient">Задать вопрос</button>
                     <div class="form-footer">
-                        <label>
-                            <input type="checkbox" checked disabled>
-                            Нажимая на кнопку, вы соглашаетесь с условиями обработки персональных данных и политикой конфиденциальности
-                        </label>
-                    </div>
+                    <label class="consent-label">
+                    <input type="checkbox" checked disabled>
+                    <span>Нажимая на кнопку, вы соглашаетесь с <a href="javascript:void(0)" onclick="openDocModal('https://raw.githubusercontent.com/amobiz99/project2/main/docs/Politika%20obrabotki%20PD.pdf')">Политикой обработки ПД</a>, <a href="javascript:void(0)" onclick="openDocModal('https://raw.githubusercontent.com/amobiz99/project2/main/docs/Soglasie%20subjekta%20PD.pdf')">Согласием на обработку ПД</a> и условиями <a href="javascript:void(0)" onclick="openDocModal('https://raw.githubusercontent.com/amobiz99/project2/main/docs/Oferta.pdf')">Оферты</a>.</span>
+                    </label>
+                </div>
                     <div id="thanksMessage" class="thanks-message">✅ Форма успешно отправлена!</div>
                 </div>
             </form>
@@ -837,8 +846,12 @@
                 <a href="#" aria-label="Phone">📞</a>
             </div>
         </div>
-        <div class="footer-col">
-            <p style="font-size:.85rem;opacity:.7">© 2026 Все права защищены.</p>
+        <div class="footer-col legal-links">
+            <h4>Документы</h4>
+            <p style="margin-bottom: 6px;"><a href="javascript:void(0)" onclick="openDocModal('https://raw.githubusercontent.com/amobiz99/project2/main/docs/Politika%20obrabotki%20PD.pdf')">Политика обработки ПД</a></p>
+            <p style="margin-bottom: 6px;"><a href="javascript:void(0)" onclick="openDocModal('https://raw.githubusercontent.com/amobiz99/project2/main/docs/Oferta.pdf')">Публичная оферта</a></p>
+            <p style="margin-bottom: 6px;"><a href="javascript:void(0)" onclick="openDocModal('https://raw.githubusercontent.com/amobiz99/project2/main/docs/Soglasie%20subjekta%20PD.pdf')">Согласие на обработку ПД</a></p>
+            <p style="font-size:.85rem;opacity:.7;margin-top:14px">© 2026 Все права защищены.</p>
         </div>
     </div>
 </footer>
@@ -847,6 +860,13 @@
     <div class="video-modal-content">
         <button class="video-modal-close" onclick="closeVideoModal()"></button>
         <video controls></video>
+    </div>
+</div>
+<!-- Всплывающее модальное окно для PDF-документов -->
+<div id="docModal" class="doc-modal" onclick="if(event.target===this) closeDocModal()">
+    <div class="doc-modal-content">
+        <button class="doc-modal-close" onclick="closeDocModal()">&times;</button>
+        <iframe id="docFrame" src=""></iframe>
     </div>
 </div>
 
@@ -985,6 +1005,26 @@
                 });
         });
     }
+// Модальное окно для PDF-документов
+function openDocModal(pdfUrl) {
+    const modal = document.getElementById('docModal');
+    const iframe = document.getElementById('docFrame');
+    if (modal && iframe) {
+        iframe.src = pdfUrl;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeDocModal() {
+    const modal = document.getElementById('docModal');
+    const iframe = document.getElementById('docFrame');
+    if (modal && iframe) {
+        modal.classList.remove('active');
+        iframe.src = '';
+        document.body.style.overflow = '';
+    }
+}
 </script>
 </body>
 </html>
